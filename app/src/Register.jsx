@@ -3,38 +3,24 @@ import Logo from './assets/Logo/logoWhite.png'
 import LogoV2 from './assets/Logo/logoBlack.png'
 import UserRegistration from "./services/UserRegistration.service.js";
 
+
 export default function SimpleRegistrationForm() {
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  });
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const handleRegister = () => {
+    let formdata  = new FormData();
+    formdata.append("firstName", firstName);
+    formdata.append("lastName", lastName);
+    formdata.append("email", email);
+    formdata.append("password", password);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formDataToUpload = new FormData();
-    formDataToUpload.append('firstName', formData.firstName);
-    formDataToUpload.append('lastName', formData.lastName);
-    formDataToUpload.append('email', formData.email);
-    formDataToUpload.append('password', formData.password);
-
-    try {
-      const response = await UserRegistration();
-      console.log('Response from registration:', response);
-    } catch (error) {
-      console.error('Error during registration:', error);
-    }
+    UserRegistration(formdata).then(user() => {
+      console.log(user);
+    });
   };
 
 
@@ -89,7 +75,7 @@ export default function SimpleRegistrationForm() {
                 </p>
               </div>
 
-              <form action="#" onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
+              <form action="#" className="mt-8 grid grid-cols-6 gap-6">
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="FirstName"
@@ -101,10 +87,9 @@ export default function SimpleRegistrationForm() {
                   <input
                     type="text"
                     id="FirstName"
-                    name="firstName"
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     placeholder="i.e, Mike"
                   />
                 </div>
@@ -120,10 +105,9 @@ export default function SimpleRegistrationForm() {
                   <input
                     type="text"
                     id="LastName"
-                    name="lastName"
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     placeholder="i.e, Alson"
                   />
                 </div>
@@ -136,10 +120,9 @@ export default function SimpleRegistrationForm() {
                   <input
                     type="email"
                     id="Email"
-                    name="email"
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
-                    value={formData.email}
-                    onChange={handleInputChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="i.e, mikealson@example.com"
                   />
                 </div>
@@ -155,10 +138,9 @@ export default function SimpleRegistrationForm() {
                   <input
                     type="password"
                     id="Password"
-                    name="password"
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
-                    value={formData.password}
-                    onChange={handleInputChange}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
 
@@ -211,6 +193,7 @@ export default function SimpleRegistrationForm() {
                   <button
                     className="inline-block shrink-0 rounded-md border border-gray-700 bg-gray-700 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-gray-700 focus:outline-none focus:ring active:text-gray-700"
                     type="submit"
+                    onClick={handleRegister}
                   >
                     Create an account
                   </button>

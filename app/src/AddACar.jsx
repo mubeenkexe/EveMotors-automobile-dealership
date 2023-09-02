@@ -8,32 +8,37 @@ const AddACar = () => {
         make: '',
         model: '',
         year: '',
-        topspeed: '',
+        topSpeed: '',
         power: '',
         torque: '',
         color: '',
-        bodytype: '',
+        bodyType: '',
         registeredIn: '',
         assembledIn: '',
-        image: null,
+        imgLinkOne: null,
+        imgLinkTwo: null,
+        modelLink: null,
     });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const formDataToUpload = new FormData();
-        formDataToUpload.append('make', formData.make);
-        formDataToUpload.append('model', formData.model);
-        formDataToUpload.append('year', formData.year);
-        formDataToUpload.append('topspeed', formData.topspeed);
-        formDataToUpload.append('power', formData.power);
-        formDataToUpload.append('torque', formData.torque);
-        formDataToUpload.append('color', formData.color);
-        formDataToUpload.append('bodytype', formData.bodytype);
-        formDataToUpload.append('registeredIn', formData.registeredIn);
-        formDataToUpload.append('assembledIn', formData.assembledIn);
-        formDataToUpload.append('image', formData.image);
+        formDataToUpload.append('make', setFormData.make);
+        formDataToUpload.append('model', setFormData.model);
+        formDataToUpload.append('year', setFormData.year);
+        formDataToUpload.append('topspeed', setFormData.topSpeed);
+        formDataToUpload.append('power', setFormData.power);
+        formDataToUpload.append('torque', setFormData.torque);
+        formDataToUpload.append('color', setFormData.color);
+        formDataToUpload.append('bodytype', setFormData.bodyType);
+        formDataToUpload.append('registeredIn', setFormData.registeredIn);
+        formDataToUpload.append('assembledIn', setFormData.assembledIn);
+        formDataToUpload.append('imgLinkOne', setFormData.imgLinkOne);
+        formDataToUpload.append('imgLinkTwo', setFormData.imgLinkTwo);
+        formDataToUpload.append('modelLink', setFormData.modelLink);
     };
+    
     return (
         <>
             <Header />
@@ -50,6 +55,7 @@ const AddACar = () => {
                         id="make"
                         placeholder="i.e, Toyota"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -61,6 +67,7 @@ const AddACar = () => {
                         id="model"
                         placeholder="i.e, Corolla"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -72,6 +79,7 @@ const AddACar = () => {
                         id="year"
                         placeholder="i.e, 2017"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Top Speed
@@ -82,6 +90,7 @@ const AddACar = () => {
                         id="topspeed"
                         placeholder="i.e, 210 MPH"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Power
@@ -91,6 +100,7 @@ const AddACar = () => {
                         id="power"
                         placeholder="i.e, 300 HP"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Color
@@ -100,6 +110,7 @@ const AddACar = () => {
                         id="power"
                         placeholder="i.e, Pearl White"
                         className="p-2 mb-8 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
 
                 </div>
@@ -115,6 +126,7 @@ const AddACar = () => {
                         id="torque"
                         placeholder="i.e, 20.9 NM"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Registered In
@@ -125,6 +137,7 @@ const AddACar = () => {
                         id="registeredIn"
                         placeholder="i.e, Islamabad"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Assembled In
@@ -135,6 +148,7 @@ const AddACar = () => {
                         id="assembledIn"
                         placeholder="i.e, Japan"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Image's Link
@@ -145,6 +159,7 @@ const AddACar = () => {
                         id="image"
                         placeholder="1st Link here"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -156,6 +171,7 @@ const AddACar = () => {
                         id="image"
                         placeholder="2nd Link here"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -167,6 +183,7 @@ const AddACar = () => {
                         id="3dmodel"
                         placeholder="Link here"
                         className="p-2 mb-8 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
+                        onSubmit={handleSubmit}
                     />
                 </div>
             </div>
