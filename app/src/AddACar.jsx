@@ -57,8 +57,8 @@ const AddACar = () => {
                         id="make"
                         placeholder="i.e, Toyota"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setMake}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={make}
+                        onChange={(e) => setMake(e.target.value)}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -70,8 +70,8 @@ const AddACar = () => {
                         id="model"
                         placeholder="i.e, Corolla"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setModel}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={model}
+                        onChange={(e) => setModel(e.target.value)}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -83,8 +83,8 @@ const AddACar = () => {
                         id="year"
                         placeholder="i.e, 2017"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setYear}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={year}
+                        onChange={(e) => setYear(e.target.value)}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Top Speed
@@ -95,8 +95,8 @@ const AddACar = () => {
                         id="topspeed"
                         placeholder="i.e, 210 MPH"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setTopSpeed}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={topSpeed}
+                        onChange={(e) => setTopSpeed(e.target.value)}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -107,8 +107,8 @@ const AddACar = () => {
                         id="power"
                         placeholder="i.e, 300 HP"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setPower}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={power}
+                        onChange={(e) => setPower(e.target.value)}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Color
@@ -118,8 +118,8 @@ const AddACar = () => {
                         id="power"
                         placeholder="i.e, Pearl White"
                         className="p-2 mb-8 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setColor}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={color}
+                        onChange={(e) => setColor(e.target.value)}
                     />
 
                 </div>
@@ -135,8 +135,8 @@ const AddACar = () => {
                         id="torque"
                         placeholder="i.e, 20.9 NM"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setTorque}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={torque}
+                        onChange={(e) => setTorque(e.target.value)}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Registered In
@@ -147,8 +147,8 @@ const AddACar = () => {
                         id="registeredIn"
                         placeholder="i.e, Islamabad"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setRegisteredIn}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={registeredIn}
+                        onChange={(e) => setRegisteredIn(e.target.value)}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Assembled In
@@ -159,8 +159,8 @@ const AddACar = () => {
                         id="assembledIn"
                         placeholder="i.e, Japan"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setAssembledIn}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={assembledIn}
+                        onChange={(e) => setAssembledIn(e.target.value)}
                     />
                     <label className="block text-xs font-medium text-gray-700 mt-8">
                         Image's Link
@@ -171,8 +171,8 @@ const AddACar = () => {
                         id="image"
                         placeholder="1st Link here"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setImgLinkOne}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={imgLinkOne}
+                        onChange={(e) => setImgLinkOne(e.target.value)}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -181,11 +181,11 @@ const AddACar = () => {
 
                     <input
                         type="text"
-                        id="image"
+                        id="imgLinkTwo"
                         placeholder="2nd Link here"
                         className="p-2 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setImgLinkTwo}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={imgLinkTwo}
+                        onChange={(e) => setImgLinkTwo(e.target.value)}
                     />
 
                     <label className="block text-xs font-medium text-gray-700 mt-8">
@@ -194,11 +194,12 @@ const AddACar = () => {
 
                     <input
                         type="text"
-                        id="3dmodel"
+                        id="modelLink"
+                        name="modelLink"
                         placeholder="Link here"
                         className="p-2 mb-8 mt-1 w-4/5 rounded-md border border-gray-200 shadow-sm sm:text-sm"
-                        value={setModelLink}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        value={modelLink}
+                        onChange={(e) => setModelLink(e.target.value)}
                     />
                 </div>
             </div>
@@ -208,6 +209,7 @@ const AddACar = () => {
                     href="addacar"
                     className="m-auto w-11/12 text-center inline-block shrink-0 rounded-md border border-orange-red bg-orange-red px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-orange-red focus:outline-none focus:ring active:text-orange-red"
                     onClick={handleSubmit}
+                    type="submit"
                 >
                     Add
                 </a>

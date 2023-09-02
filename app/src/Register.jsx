@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Logo from './assets/Logo/logoWhite.png'
 import LogoV2 from './assets/Logo/logoBlack.png'
 import UserRegistration from "./services/UserRegistration.service.js";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SimpleRegistrationForm() {
 
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,6 +27,8 @@ export default function SimpleRegistrationForm() {
       .catch((error) => {
         console.error(error);
       });
+
+      navigate("/login");
   };
 
   return (

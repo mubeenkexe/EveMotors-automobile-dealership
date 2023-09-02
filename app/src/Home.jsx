@@ -61,7 +61,7 @@ const Home = () => {
         Embark on Your Journey of Luxury and Performance: Discover Your Perfect Ride with Us.
       </p>
 
-      {getCars.map((car) => (
+      {/* {getCars.map((car) => (
         <a href="#" className="group relative block my-12">
           <div className="relative h-[350px] sm:h-[450px] transition-all">
             <img
@@ -93,7 +93,7 @@ const Home = () => {
           </div>
         </a>
 
-      ))}
+      ))} */}
     </>
   );
 };
