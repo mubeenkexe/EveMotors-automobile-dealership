@@ -5,14 +5,15 @@ const CarsSchema = new Schema({
         type: String,
         required: true,
     },
-    makemodel: {
+    make: {
         type: String,
         required: true,
     },
-    tagline: {
+    model: {
         type: String,
+        required: true,
     },
-    topspeed: {
+    topSpeed: {
         type: Number,
         required: true,
     },
@@ -24,7 +25,7 @@ const CarsSchema = new Schema({
         type: Number,
         required: true,
     },
-    fuelcapacity: {
+    fuelCapacity: {
         type: Number,
         required: true,
     },
@@ -32,18 +33,30 @@ const CarsSchema = new Schema({
         type: String,
         required: true,
     },
-    bodytype: {
+    bodyType: {
         type: String,
         required: true,
     },
-    registeredin: {
+    registeredIn: {
         type: String,
         required: true,
     },
-    assembly: {
+    assembledIn: {
         type: String,
         required: true,
-    }
+    },
+    imgLinkOne: {
+        type: String,
+        required: true,
+    },
+    imgLinkTwo: {
+        type: String,
+        required: true,
+    },
+    modelLink: {
+        type: String,
+        required: true,
+    },
 });
 
 export const carsModel = mongoose.model("cars", CarsSchema);

@@ -1,6 +1,9 @@
 import Logo from './assets/Logo/logoBlack.png'
 import UserSignIn from './services/UserSignIn.service';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
+const navigate = useNavigate();
 const Login = () => {
 
     const [email, setEmail] = useState('');
@@ -18,6 +21,8 @@ const Login = () => {
             .catch((error) => {
                 console.error(error);
             });
+
+        navigate("/");
     };
     return (
         <>

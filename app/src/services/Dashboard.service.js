@@ -2,7 +2,7 @@ import axios from "axios";
 
 let API_URL = 'http://localhost:3000/admin/'
 
-export const FormDashboard = async () => {
+export const FormDashboard = async (formDataToUpload) => {
 
     try {
 
