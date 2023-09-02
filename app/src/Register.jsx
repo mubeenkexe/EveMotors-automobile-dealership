@@ -12,17 +12,20 @@ export default function SimpleRegistrationForm() {
   const [password, setPassword] = useState('');
 
   const handleRegister = () => {
-    let formdata  = new FormData();
+    let formdata = new FormData();
     formdata.append("firstName", firstName);
     formdata.append("lastName", lastName);
     formdata.append("email", email);
     formdata.append("password", password);
 
-    UserRegistration(formdata).then(user() => {
-      console.log(user);
-    });
+    UserRegistration(formdata)
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
-
 
   return (
     <>
@@ -91,6 +94,7 @@ export default function SimpleRegistrationForm() {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     placeholder="i.e, Mike"
+                    required
                   />
                 </div>
 
@@ -109,6 +113,7 @@ export default function SimpleRegistrationForm() {
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     placeholder="i.e, Alson"
+                    required
                   />
                 </div>
 
@@ -124,6 +129,7 @@ export default function SimpleRegistrationForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="i.e, mikealson@example.com"
+                    required
                   />
                 </div>
 
@@ -141,6 +147,7 @@ export default function SimpleRegistrationForm() {
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
 
@@ -157,6 +164,7 @@ export default function SimpleRegistrationForm() {
                     id="PasswordConfirmation"
                     name="password_confirmation"
                     className="mt-1 w-full rounded-md border border-gray-300 bg-white text-sm text-gray-700 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200"
+                   
                   />
                 </div>
 

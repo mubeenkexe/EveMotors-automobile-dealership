@@ -1,5 +1,4 @@
 import axios from "axios";
-import {formDataToUpload} from '../Dashboard.jsx'
 
 let API_URL = 'http://localhost:3000/admin/'
 
@@ -13,7 +12,7 @@ export const FormDashboard = async () => {
 
     } catch (error) {
         console.error(error);
-        alert('Could not add the car')
+        alert('Could not add the car');
     }
 
 };

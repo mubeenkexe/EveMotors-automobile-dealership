@@ -2,9 +2,14 @@ import { Router } from "express";
 import { carsModel } from "../models/cars.js";
 import { hash, compare } from "bcrypt";
 import { userModel } from "../models/users.js";
+import multer from 'multer'
 import jwt from "jsonwebtoken";
 
 const mainRouter = Router();
+
+const upload = multer();
+
+mainRouter.use(upload.array());
 
 mainRouter.get('/cars', async (req, res) => {
 
@@ -63,17 +68,17 @@ mainRouter.post('/register', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "An error occurred while registering the user." });
-        re.end();
+        res.end();
     }
 });
 
 mainRouter.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     try {
-        const user = await userModel.findOne({ username });
+        const user = await userModel.findOne({ email });
 
         if (!user) {
-            res.status(401).json({ message: "Invalid Username" })
+            res.status(401).json({ message: "Invalid Email" })
             res.end();
         }
         const isPasswordValid = await compare(password, user.password);
