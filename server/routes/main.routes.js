@@ -96,6 +96,4 @@ mainRouter.post('/login', async (req, res) => {
     }
 });
 
-mainRouter.get('/car/' + {})
-
 export default mainRouter;
